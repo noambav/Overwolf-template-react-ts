@@ -1,0 +1,35 @@
+/* Example stylesheet */
+@media screen and (prefers-color-scheme: light),
+  screen and (prefers-color-scheme: no-preference) {
+  /* Light theme */
+  body {
+    color: #fff;
+    background: linear-gradient(to bottom, rgb(19, 23, 50), 30%, #191414);
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    margin: 0;
+    user-select: none; /* Standard syntax */
+    text-decoration: none;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  /* Dark theme */
+  body {
+    color: #fff;
+    background: linear-gradient(to bottom, rgb(19, 23, 50), 30%, #191414);
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    margin: 0;
+    user-select: none; /* Standard syntax */
+    text-decoration: none;
+  }
+}
+
+.container {
+  background: linear-gradient(to bottom, rgb(19, 23, 50), 30%, #191414);
+  width: 100%;
+  height: 100vh;
+}

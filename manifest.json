@@ -1,0 +1,138 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "Template",
+    "version": "1.0.8",
+    "minimum-overwolf-version": "0.120.0",
+    "author": "Noam Bavli",
+    "icon": "icons/discordBot.png",
+    "icon_gray": "icons/discordBot.png",
+    "launcher_icon": "icons/discordBot.ico",
+    "window_icon": "icons/discordBot.png",
+    "description": "A controller app for the Mello discord bot."
+  },
+  "permissions": [
+    "GameInfo",
+    "Hotkeys",
+    "Extensions",
+    "Streaming",
+    "Profile",
+    "DesktopStreaming"
+  ],
+  "data": {
+    "game_targeting": {
+      "type": "all"
+    },
+    "url_protocol": {
+      "scheme": "overwolf-extension"
+    },
+    "externally_connectable": {
+      "matches": [
+        "http://*.spotify.com",
+        "https://*.spotify.com",
+        "http://*.discord.com",
+        "https://*.discord.com"
+      ]
+    },
+    "launch_events": [
+      {
+        "event": "AllGamesLaunch",
+        "include_launchers": true,
+        "event_data": {
+          "wait_for_stable_framerate": 30
+        },
+        "start_minimized": false
+      }
+    ],
+    "start_window": "background",
+    "hotkeys": {
+      "in_game_showhide": {
+        "title": "Show/Hide In-Game Window",
+        "action-type": "custom",
+        "default": "Ctrl+M",
+        "passthrough": true
+      },
+      "second_monitor_showhide": {
+        "title": "Show/Hide Second Monitor Window",
+        "action-type": "custom",
+        "default": "Ctrl+Shift+M",
+        "passthrough": true
+      }
+    },
+    "windows": {
+      "background": {
+        "file": "background/background.html",
+        "background_optimization": false,
+        "is_background_page": true
+      },
+      "desktop": {
+        "file": "desktop/desktop.html",
+        "native_window": true,
+        "transparent": true,
+        "resizable": true,
+        "size": {
+          "width": 1275,
+          "height": 700
+        },
+        "min_size": {
+          "width": 1275,
+          "height": 700
+        },
+        "max_size": {
+          "width": 1920,
+          "height": 1080
+        },
+        "desktop_only": true
+      },
+      "in_game": {
+        "file": "in_game/in_game.html",
+        "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "in_game_showhide",
+        "block_top_window_navigation": true,
+        "popup_blocker": true,
+        "mute": true,
+        "transparent": true,
+        "resizable": false,
+        "override_on_update": true,
+        "size": {
+          "width": 1212,
+          "height": 699
+        },
+        "min_size": {
+          "width": 1212,
+          "height": 699
+        },
+        "max_size": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      "second_monitor": {
+        "file": "second_monitor/second_monitor.html",
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "second_monitor_showhide",
+        "transparent": true,
+        "resizable": true,
+        "keep_window_location": true,
+        "desktop_only": true,
+        "block_top_window_navigation": true,
+        "popup_blocker": true,
+        "native_window": true,
+        "disable_hardware_acceleration": true,
+        "mute": true,
+        "min_size": {
+          "width": 1212,
+          "height": 699
+        }
+      }
+    },
+    "force_browser": "user",
+    "developer": {
+      "enable_auto_refresh": true,
+      "reload_delay": 1000,
+      "filter": "*.*"
+    }
+  }
+}
