@@ -64,14 +64,6 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("development"),
-      "process.env.ENDPOINT": JSON.stringify("http://localhost"),
-      "process.env.PORT": JSON.stringify("25526"),
-      "process.env.SPOTIFY_CLIENT_ID": JSON.stringify(
-        "013dc5ed9d0543c295cb6c4fbf6fa210"
-      ),
-      "process.env.DISCORD_CLIENT_ID": JSON.stringify("1099786127205994606"),
-      //CLIENT_ID = "1085278907575574608"; // Mello
-      //CLIENT_ID = "1099786127205994606"; // Testing bot
     }),
   ],
 };
